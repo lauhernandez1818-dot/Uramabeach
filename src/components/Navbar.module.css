@@ -200,7 +200,8 @@
   }
 
   .navLinks,
-  .ctaBtn {
+  .ctaBtn,
+  .themeToggleDesktop {
     display: none;
   }
 
@@ -211,6 +212,29 @@
   .mobileMenu {
     display: flex;
   }
+}
+
+/* Theme toggle row inside the mobile menu */
+.mobileThemeRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  padding: 1rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  width: 100%;
+}
+
+.mobileThemeLabel {
+  font-family: var(--font-heading);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.85);
+  text-transform: uppercase;
 }
 
 /* ============================================

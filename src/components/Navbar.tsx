@@ -56,8 +56,10 @@ export default function Navbar() {
           Reservar Ahora
         </a>
 
-        {/* Theme Toggle */}
-        <ThemeToggle />
+        {/* Theme Toggle — desktop only, hidden on mobile */}
+        <div className={styles.themeToggleDesktop}>
+          <ThemeToggle />
+        </div>
 
         {/* Mobile Toggle */}
         <button
@@ -101,6 +103,12 @@ export default function Navbar() {
         >
           Reservar Ahora
         </a>
+
+        {/* Theme toggle inside mobile menu */}
+        <div className={styles.mobileThemeRow}>
+          <span className={styles.mobileThemeLabel}>Cambiar tema</span>
+          <ThemeToggle />
+        </div>
       </div>
     </nav>
   );
