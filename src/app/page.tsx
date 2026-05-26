@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Experience from "@/components/Experience";
@@ -21,23 +22,22 @@ function BeachDivider({ src, alt, height = 280 }: { src: string; alt: string; he
       position: "relative",
       margin: 0,
       padding: 0,
-      lineHeight: 0,
     }}>
-      <img
+      <Image
         src={src}
         alt={alt}
+        fill
+        sizes="100vw"
         style={{
-          width: "100%",
-          height: "100%",
           objectFit: "cover",
           objectPosition: "center 40%",
-          display: "block",
         }}
       />
       <div style={{
         position: "absolute",
         inset: 0,
         background: "linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 30%, transparent 70%, rgba(255,255,255,0.35) 100%)",
+        zIndex: 1,
       }} />
     </div>
   );

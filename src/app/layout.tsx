@@ -1,5 +1,27 @@
 import type { Metadata } from "next";
+import { Montserrat, Outfit, Inter } from "next/font/google";
 import "./globals.css";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+const outfit = Outfit({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-outfit",
+  display: "swap",
+});
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export const metadata: Metadata = {
   title: "UramaBeach — Experiencia Premium de Playa & Resort",
@@ -60,7 +82,9 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body>{children}</body>
+      <body className={`${montserrat.variable} ${outfit.variable} ${inter.variable}`}>
+        {children}
+      </body>
     </html>
   );
 }

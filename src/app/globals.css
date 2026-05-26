@@ -2,8 +2,6 @@
    URAMABEACH — Premium Design System
    ============================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap');
-
 /* --- CSS Custom Properties --- */
 :root {
   /* Beach Palette — Timberwolf · Alice Blue · Light Blue · Moonstone · Midnight Green */
@@ -51,9 +49,9 @@
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
   /* Typography */
-  --font-display: 'Montserrat', sans-serif;
-  --font-heading: 'Outfit', 'Inter', sans-serif;
-  --font-body: 'Inter', system-ui, sans-serif;
+  --font-display: var(--font-montserrat), 'Montserrat', sans-serif;
+  --font-heading: var(--font-outfit), 'Outfit', 'Inter', sans-serif;
+  --font-body: var(--font-inter), 'Inter', system-ui, sans-serif;
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -760,6 +758,9 @@ button {
   height: 3px;
   background: linear-gradient(90deg, #44A6B5, #B2D5E2, #004554);
   z-index: var(--z-toast);
-  transition: width 0.1s linear;
   box-shadow: 0 0 8px rgba(68, 166, 181, 0.6);
+  width: 100%;
+  transform: scaleX(0);
+  transform-origin: left;
+  will-change: transform;
 }

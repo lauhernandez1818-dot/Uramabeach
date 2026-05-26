@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function ScrollAnimator({
   children,
@@ -8,15 +8,18 @@ export default function ScrollAnimator({
   children: React.ReactNode;
 }) {
   const observerRef = useRef<IntersectionObserver | null>(null);
-  const [progress, setProgress] = useState(0);
+  const progressBarRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Scroll progress bar
+    // Scroll progress bar: updates directly to avoid React state re-renders
     const onScroll = () => {
+      if (!progressBarRef.current) return;
       const el = document.documentElement;
       const scrollTop = el.scrollTop || document.body.scrollTop;
       const scrollHeight = el.scrollHeight - el.clientHeight;
-      setProgress(scrollHeight > 0 ? (scrollTop / scrollHeight) * 100 : 0);
+      const progressFraction = scrollHeight > 0 ? scrollTop / scrollHeight : 0;
+      
+      progressBarRef.current.style.transform = `scaleX(${progressFraction})`;
     };
     window.addEventListener("scroll", onScroll, { passive: true });
 
@@ -69,8 +72,8 @@ export default function ScrollAnimator({
     <>
       {/* Scroll progress bar */}
       <div
+        ref={progressBarRef}
         className="scroll-progress"
-        style={{ width: `${progress}%` }}
         aria-hidden="true"
       />
       {children}

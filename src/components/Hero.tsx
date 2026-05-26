@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import styles from "./Hero.module.css";
 
 interface Particle {
@@ -13,11 +14,18 @@ interface Particle {
 }
 
 export default function Hero() {
-  const [offset, setOffset] = useState(0);
   const [particles, setParticles] = useState<Particle[]>([]);
+  const parallaxRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    const onScroll = () => setOffset(window.scrollY);
+    // Disable parallax on mobile to prevent scrolling lag
+    if (window.innerWidth < 768) return;
+
+    const onScroll = () => {
+      if (parallaxRef.current) {
+        parallaxRef.current.style.transform = `translateY(${window.scrollY * 0.3}px)`;
+      }
+    };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
@@ -40,13 +48,17 @@ export default function Hero() {
     <section className={styles.hero} id="inicio">
       {/* Parallax Background */}
       <div
+        ref={parallaxRef}
         className={styles.bgWrapper}
-        style={{ transform: `translateY(${offset * 0.3}px)` }}
       >
-        <img
+        <Image
           src="/hero-beach.png"
           alt="UramaBeach aerial view"
+          fill
+          priority
+          sizes="100vw"
           className={styles.bgImage}
+          style={{ objectFit: "cover" }}
         />
         <div className={styles.overlay} />
       </div>

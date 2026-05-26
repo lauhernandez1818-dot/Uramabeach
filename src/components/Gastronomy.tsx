@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./Gastronomy.module.css";
 
 const MENU_ITEMS = [
@@ -70,20 +71,26 @@ export default function Gastronomy() {
           {/* Food Image + Cocktail */}
           <div className={`${styles.mediaCol} scroll-reveal`}>
             <div className={styles.foodFrame}>
-              <img
+              <Image
                 src="/gastronomy-dish.png"
                 alt="Gastronomía gourmet UramaBeach"
+                fill
+                sizes="(max-width: 768px) 100vw, 500px"
                 className={styles.foodImg}
+                style={{ objectFit: "cover" }}
               />
               <div className={styles.foodOverlay}>
                 <span className={styles.foodBadge}>🍽️ Gastronomía Gourmet</span>
               </div>
             </div>
             <div className={styles.cocktailFrame}>
-              <img
+              <Image
                 src="/cocktail-premium.png"
                 alt="Coctelería premium"
+                fill
+                sizes="(max-width: 768px) 100vw, 500px"
                 className={styles.cocktailImg}
+                style={{ objectFit: "cover" }}
               />
               <div className={styles.foodOverlay}>
                 <span className={styles.foodBadge}>🍸 Coctelería de Autor</span>

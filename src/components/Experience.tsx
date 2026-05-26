@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import styles from "./Experience.module.css";
 
 const FEATURES = [
@@ -100,10 +101,13 @@ export default function Experience() {
         {/* Aerial Image */}
         <div className={`${styles.showcase} scroll-reveal`}>
           <div className={styles.showcaseFrame}>
-            <img
+            <Image
               src="/beach-aerial.png"
               alt="Vista aérea de playa UramaBeach"
+              fill
+              sizes="(max-width: 768px) 100vw, 1100px"
               className={styles.showcaseImg}
+              style={{ objectFit: "cover" }}
             />
             <div className={styles.showcaseOverlay}>
               <span className={styles.showcaseBadge}>

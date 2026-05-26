@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import styles from "./Spaces.module.css";
 
 const SPACES = [
@@ -87,10 +88,13 @@ export default function Spaces() {
         <div className={`${styles.content}`} key={activeSpace}>
           <div className={`${styles.imageCol} reveal-left`}>
             <div className={styles.imageFrame}>
-              <img
+              <Image
                 src={space.image}
                 alt={space.name}
+                fill
+                sizes="(max-width: 768px) 100vw, 600px"
                 className={`${styles.spaceImage} parallax-img`}
+                style={{ objectFit: "cover" }}
               />
               <div className={styles.imageGlow} />
             </div>
