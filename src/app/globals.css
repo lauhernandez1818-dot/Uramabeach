@@ -48,10 +48,10 @@
   --glass-border: rgba(255, 255, 255, 0.15);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 
-  /* Typography */
+  /* Typography — unified to Montserrat across all elements */
   --font-display: var(--font-montserrat), 'Montserrat', sans-serif;
-  --font-heading: var(--font-outfit), 'Outfit', 'Inter', sans-serif;
-  --font-body: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-heading: var(--font-montserrat), 'Montserrat', sans-serif;
+  --font-body: var(--font-montserrat), 'Montserrat', sans-serif;
 
   /* Spacing */
   --space-xs: 0.25rem;
