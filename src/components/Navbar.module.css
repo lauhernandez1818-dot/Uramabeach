@@ -30,17 +30,19 @@
   display: flex;
   align-items: center;
   z-index: 10;
+  flex-shrink: 0;
 }
 
 .logoImg {
-  height: 110px;
+  height: 52px;
   width: auto;
+  flex-shrink: 0;
   filter: invert(1) brightness(2);
   transition: all var(--transition-base);
 }
 
 .scrolled .logoImg {
-  height: 75px;
+  height: 42px;
   filter: none;
 }
 
@@ -190,11 +192,11 @@
 
 @media (max-width: 1024px) {
   .logoImg {
-    height: 85px;
+    height: 46px;
   }
 
   .scrolled .logoImg {
-    height: 60px;
+    height: 38px;
   }
 
   .navLinks,

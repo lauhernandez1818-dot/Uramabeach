@@ -72,6 +72,7 @@
 .appLogo {
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
   filter: invert(1) brightness(2);
 }
 

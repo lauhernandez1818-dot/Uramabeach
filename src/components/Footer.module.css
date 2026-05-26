@@ -28,8 +28,9 @@
 .brand { max-width: 320px; }
 
 .logo {
-  height: 45px;
+  height: 36px;
   width: auto;
+  flex-shrink: 0;
   filter: invert(1) brightness(2);
   margin-bottom: 1rem;
 }
