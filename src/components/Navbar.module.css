@@ -121,6 +121,10 @@
   transform-origin: center;
 }
 
+.scrolled .hamburger span {
+  background: var(--ocean-deep);
+}
+
 .hamburger.active span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
@@ -248,3 +252,4 @@
 :global([data-theme="dark"]) .scrolled .navLink { color: #D3D0C8; }
 :global([data-theme="dark"]) .scrolled .navLink:hover { color: #B2D5E2; }
 :global([data-theme="dark"]) .scrolled .logoImg { filter: invert(1) brightness(1.5); }
+:global([data-theme="dark"]) .scrolled .hamburger span { background: var(--white); }

@@ -100,7 +100,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.05em;
-  color: var(--ocean-blue);
+  color: #ffffff;
 }
 
 /* Menu Column */
@@ -300,7 +300,6 @@
   background: rgba(68, 166, 181, 0.12);
   border-color: rgba(68, 166, 181, 0.3);
 }
-:global([data-theme="dark"]) .foodBadge { color: #B2D5E2; }
 :global([data-theme="dark"]) .foodFrame,
 :global([data-theme="dark"]) .cocktailFrame {
   box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
