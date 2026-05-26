@@ -1,0 +1,224 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: var(--z-fixed);
+  padding: 1.5rem 0;
+  transition: all var(--transition-base);
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 0.875rem 0;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+.logoImg {
+  height: 110px;
+  width: auto;
+  filter: invert(1) brightness(2);
+  transition: all var(--transition-base);
+}
+
+.scrolled .logoImg {
+  height: 75px;
+  filter: none;
+}
+
+.logo:hover .logoImg {
+  transform: scale(1.05);
+}
+
+.navLinks {
+  display: flex;
+  list-style: none;
+  gap: 2.25rem;
+}
+
+.navLink {
+  font-family: var(--font-heading);
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--white);
+  position: relative;
+  padding: 0.25rem 0;
+  transition: color var(--transition-fast);
+}
+
+.scrolled .navLink {
+  color: var(--gray-700);
+}
+
+.navLink::after {
+  content: "";
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--turquoise), var(--gold));
+  border-radius: 2px;
+  transition: width var(--transition-base);
+}
+
+.navLink:hover {
+  color: #ffffff;
+  text-shadow: 0 0 12px rgba(178, 213, 226, 0.8);
+}
+
+.scrolled .navLink:hover {
+  color: var(--ocean-teal);
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.ctaBtn {
+  padding: 0.625rem 1.5rem;
+  font-size: 0.8125rem;
+}
+
+/* Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  padding: 8px;
+  z-index: 10;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  border-radius: 2px;
+  transition: all var(--transition-base);
+  transform-origin: center;
+}
+
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 22, 40, 0.97);
+  backdrop-filter: blur(30px);
+  -webkit-backdrop-filter: blur(30px);
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-base);
+}
+
+.mobileOpen {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.mobileLinks {
+  list-style: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.mobileLinks li {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.4s ease-out;
+}
+
+.mobileItemVisible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.mobileLink {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--white);
+  transition: color var(--transition-fast);
+}
+
+.mobileLink:hover {
+  color: var(--turquoise-light);
+}
+
+@media (max-width: 1024px) {
+  .logoImg {
+    height: 85px;
+  }
+
+  .scrolled .logoImg {
+    height: 60px;
+  }
+
+  .navLinks,
+  .ctaBtn {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: flex;
+  }
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+:global([data-theme="dark"]) .scrolled {
+  background: rgba(0, 24, 37, 0.93);
+  border-bottom-color: rgba(68, 166, 181, 0.12);
+  box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+}
+:global([data-theme="dark"]) .scrolled .navLink { color: #D3D0C8; }
+:global([data-theme="dark"]) .scrolled .navLink:hover { color: #B2D5E2; }
+:global([data-theme="dark"]) .scrolled .logoImg { filter: invert(1) brightness(1.5); }

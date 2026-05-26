@@ -1,0 +1,307 @@
+.smart {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--ocean-deep) 0%, rgba(68, 166, 181, 0.06) 50%, var(--ocean-deep) 100%);
+}
+
+.layout {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+/* Phone Mockup */
+.phoneCol {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.phoneMockup {
+  width: 280px;
+  background: #111827;
+  border-radius: 2.5rem;
+  padding: 0.75rem;
+  box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+.phoneNotch {
+  width: 120px;
+  height: 24px;
+  background: #111827;
+  border-radius: 0 0 1rem 1rem;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.phoneScreen {
+  background: var(--ocean-dark);
+  border-radius: 2rem;
+  overflow: hidden;
+  min-height: 520px;
+  display: flex;
+  flex-direction: column;
+}
+
+.phoneGlow {
+  position: absolute;
+  bottom: -30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 80px;
+  background: radial-gradient(ellipse, rgba(0, 180, 216, 0.25) 0%, transparent 70%);
+  filter: blur(20px);
+  z-index: 0;
+}
+
+/* App UI */
+.appHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 1rem 1rem 0.75rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.appLogo {
+  width: 20px;
+  height: 20px;
+  filter: invert(1) brightness(2);
+}
+
+.appTitle {
+  font-family: var(--font-heading);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--ocean-blue);
+}
+
+.appContent {
+  flex: 1;
+  padding: 0.75rem;
+  overflow: hidden;
+}
+
+.appLabel {
+  font-size: 0.7rem;
+  color: var(--gray-600);
+  padding: 0.5rem 0.75rem;
+  background: rgba(0, 180, 216, 0.08);
+  border-radius: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.appLabel strong { color: var(--turquoise-light); }
+
+.appCategory {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-600);
+  margin: 0.75rem 0 0.5rem;
+}
+
+.appItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  background: rgba(0, 119, 182, 0.03);
+  border: 1px solid rgba(0, 119, 182, 0.1);
+  border-radius: 0.5rem;
+  margin-bottom: 0.4rem;
+}
+
+.appItemImg {
+  width: 40px;
+  height: 40px;
+  border-radius: 0.375rem;
+  flex-shrink: 0;
+}
+
+.appItemInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.appItemName {
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--ocean-blue);
+}
+
+.appItemPrice {
+  font-size: 0.65rem;
+  color: var(--turquoise-light);
+  font-weight: 600;
+}
+
+.appAddBtn {
+  width: 28px;
+  height: 28px;
+  border-radius: 0.375rem;
+  background: rgba(0, 180, 216, 0.15);
+  border: 1px solid rgba(0, 180, 216, 0.3);
+  color: var(--turquoise-light);
+  font-size: 1rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.appCart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background: rgba(0, 180, 216, 0.08);
+  border-top: 1px solid rgba(0, 180, 216, 0.15);
+  font-size: 0.75rem;
+  color: var(--gray-600);
+}
+
+.appOrderBtn {
+  padding: 0.4rem 1rem;
+  background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+  border-radius: 9999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Info Column */
+.infoCol {
+  padding: 1rem 0;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ocean-blue);
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--gray-600);
+  margin-bottom: 2.5rem;
+}
+
+/* Steps */
+.steps {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.step {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.25rem;
+  background: rgba(0, 119, 182, 0.03);
+  border: 1px solid rgba(0, 119, 182, 0.1);
+  border-radius: 1rem;
+  transition: all var(--transition-base);
+}
+
+.step:hover {
+  background: rgba(0, 119, 182, 0.06);
+  border-color: rgba(0, 180, 216, 0.2);
+  transform: translateX(8px);
+}
+
+.stepIcon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.12), rgba(212, 168, 83, 0.08));
+  border: 1px solid rgba(0, 180, 216, 0.2);
+  color: var(--turquoise-light);
+  flex-shrink: 0;
+}
+
+.stepContent { flex: 1; }
+
+.stepNum {
+  font-family: var(--font-heading);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.stepTitle {
+  font-family: var(--font-heading);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--ocean-blue);
+  margin: 0.25rem 0;
+}
+
+.stepDesc {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--gray-600);
+}
+
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+
+  .phoneCol { order: 2; }
+  .infoCol { order: 1; }
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+:global([data-theme="dark"]) .smart {
+  background: linear-gradient(180deg, #001825 0%, rgba(68,166,181,0.05) 50%, #001825 100%);
+}
+:global([data-theme="dark"]) .step {
+  background: rgba(68, 166, 181, 0.07);
+  border-color: rgba(68, 166, 181, 0.2);
+}
+:global([data-theme="dark"]) .step:hover {
+  background: rgba(68, 166, 181, 0.13);
+  border-color: rgba(68, 166, 181, 0.35);
+}
+:global([data-theme="dark"]) .stepIcon {
+  background: linear-gradient(135deg, rgba(68,166,181,0.18), rgba(0,69,84,0.2));
+  border-color: rgba(68,166,181,0.35);
+}
+:global([data-theme="dark"]) .phoneScreen { background: #002535; }
+:global([data-theme="dark"]) .appLabel { background: rgba(68,166,181,0.12); }
+:global([data-theme="dark"]) .appItem {
+  background: rgba(68,166,181,0.07);
+  border-color: rgba(68,166,181,0.15);
+}
+:global([data-theme="dark"]) .appCart {
+  background: rgba(68,166,181,0.1);
+  border-top-color: rgba(68,166,181,0.2);
+}
+:global([data-theme="dark"]) .appTitle { color: #B2D5E2; }
+:global([data-theme="dark"]) .appCategory { color: #B2D5E2; }
+:global([data-theme="dark"]) .appItemName { color: #D3D0C8; }

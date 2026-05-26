@@ -1,0 +1,138 @@
+/* ============================================
+   THEME TOGGLE — Coin flip animation
+   ============================================ */
+
+/* Perspective wrapper for 3D depth */
+.toggleWrapper {
+  perspective: 300px;
+}
+
+.toggle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  overflow: visible;
+  z-index: 1;
+  transform-style: preserve-3d;
+  transition:
+    background 0.35s ease,
+    box-shadow 0.35s ease;
+}
+
+/* Day mode */
+.toggleLight {
+  background: linear-gradient(135deg, #44A6B5 0%, #004554 100%);
+  color: #ffffff;
+  box-shadow:
+    0 4px 20px rgba(68, 166, 181, 0.4),
+    0 0 0 3px rgba(68, 166, 181, 0.15);
+}
+
+/* Night mode */
+.toggleDark {
+  background: linear-gradient(135deg, #001825 0%, #003040 100%);
+  color: #B2D5E2;
+  box-shadow:
+    0 4px 20px rgba(0, 24, 37, 0.6),
+    0 0 0 3px rgba(178, 213, 226, 0.18);
+}
+
+.toggle:hover {
+  transform: scale(1.08);
+}
+
+.toggle:active {
+  transform: scale(0.92);
+}
+
+/* ============================================
+   COIN FLIP — rotateY full spin
+   ============================================ */
+.spinning {
+  animation: coinFlip 0.55s cubic-bezier(0.45, 0, 0.55, 1) forwards;
+}
+
+@keyframes coinFlip {
+  0%   { transform: perspective(300px) rotateY(0deg); }
+  100% { transform: perspective(300px) rotateY(360deg); }
+}
+
+/* ============================================
+   ICON — also flips (part of the button)
+   ============================================ */
+.iconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  /* Icon fades out at the edge point (50%) and back in */
+  transition: opacity 0.08s ease;
+}
+
+.iconHidden {
+  opacity: 0;
+}
+
+/* ============================================
+   ORBIT RING — continuous slow rotation
+   ============================================ */
+.orbitRing {
+  position: absolute;
+  inset: -6px;
+  border-radius: 50%;
+  border: 1.5px solid transparent;
+  pointer-events: none;
+  animation: orbitSpin 4s linear infinite;
+}
+
+.toggleLight .orbitRing {
+  border-top-color: rgba(178, 213, 226, 0.7);
+  border-right-color: rgba(178, 213, 226, 0.2);
+}
+
+.toggleDark .orbitRing {
+  border-top-color: rgba(178, 213, 226, 0.45);
+  border-right-color: rgba(178, 213, 226, 0.12);
+}
+
+@keyframes orbitSpin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ============================================
+   TOOLTIP
+   ============================================ */
+.toggle::after {
+  content: attr(title);
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(4px);
+  background: #001825;
+  color: #E9F1F6;
+  font-family: 'Outfit', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+  padding: 0.3rem 0.75rem;
+  border-radius: 6px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  z-index: 10;
+}
+
+.toggle:hover::after {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}

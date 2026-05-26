@@ -1,0 +1,303 @@
+.gastronomy {
+  position: relative;
+  padding: 5rem 0;
+  overflow: hidden;
+}
+
+.bgGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    var(--ocean-deep) 0%,
+    rgba(0, 180, 216, 0.05) 50%,
+    var(--ocean-deep) 100%
+  );
+  pointer-events: none;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  max-width: 650px;
+  margin: 0 auto 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3.25rem);
+  font-weight: 700;
+  line-height: 1.15;
+  color: var(--ocean-blue);
+  margin-bottom: 1rem;
+}
+
+.desc {
+  font-size: 1.05rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: var(--gray-600);
+}
+
+/* Main Grid */
+.mainGrid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 3rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* Media Column */
+.mediaCol {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.foodFrame,
+.cocktailFrame {
+  position: relative;
+  border-radius: 1.25rem;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+}
+
+.foodImg,
+.cocktailImg {
+  width: 100%;
+  height: 100%;
+  min-height: 260px;
+  object-fit: cover;
+  transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.foodFrame:hover .foodImg,
+.cocktailFrame:hover .cocktailImg {
+  transform: scale(1.07);
+}
+
+.foodOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent 40%, rgba(10, 22, 40, 0.7) 100%);
+  display: flex;
+  align-items: flex-end;
+  padding: 1.25rem;
+}
+
+.foodBadge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 9999px;
+  font-family: var(--font-heading);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--ocean-blue);
+}
+
+/* Menu Column */
+.menuCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.menuSection {
+  background: rgba(0, 119, 182, 0.03);
+  border: 1px solid rgba(0, 119, 182, 0.1);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+}
+
+.menuTitle {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--ocean-blue);
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid rgba(0, 119, 182, 0.1);
+}
+
+.menuItems {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.menuItem {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(0, 119, 182, 0.1);
+}
+
+.menuItem:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.menuItemHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.menuItemName {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.menuItemName h4 {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--ocean-blue);
+}
+
+.menuTag {
+  display: inline-flex;
+  padding: 0.15rem 0.5rem;
+  background: rgba(212, 168, 83, 0.15);
+  border: 1px solid rgba(212, 168, 83, 0.3);
+  border-radius: 9999px;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
+
+.menuPrice {
+  font-family: var(--font-heading);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--turquoise-light);
+  white-space: nowrap;
+}
+
+.menuItemDesc {
+  font-size: 0.85rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: var(--gray-600);
+}
+
+/* Cocktail Grid */
+.cocktailGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.75rem;
+}
+
+.cocktailCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: rgba(0, 119, 182, 0.03);
+  border: 1px solid rgba(0, 119, 182, 0.1);
+  border-radius: 0.75rem;
+  transition: all var(--transition-base);
+}
+
+.cocktailCard:hover {
+  background: rgba(0, 180, 216, 0.06);
+  border-color: rgba(0, 180, 216, 0.15);
+}
+
+.cocktailName {
+  font-family: var(--font-heading);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ocean-blue);
+  margin-bottom: 0.2rem;
+}
+
+.cocktailDesc {
+  font-size: 0.75rem;
+  font-weight: 300;
+  color: var(--gray-600);
+}
+
+.cocktailPrice {
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--turquoise-light);
+  white-space: nowrap;
+}
+
+/* CTA */
+.menuCta {
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .mainGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mediaCol {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .mediaCol {
+    grid-template-columns: 1fr;
+  }
+
+  .cocktailGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ============================================
+   DARK MODE
+   ============================================ */
+:global([data-theme="dark"]) .gastronomy { background: #001825; }
+:global([data-theme="dark"]) .bgGradient {
+  background: linear-gradient(180deg, #001825 0%, rgba(68,166,181,0.06) 50%, #001825 100%);
+}
+:global([data-theme="dark"]) .menuSection {
+  background: rgba(68, 166, 181, 0.07);
+  border-color: rgba(68, 166, 181, 0.18);
+}
+:global([data-theme="dark"]) .menuTitle { border-bottom-color: rgba(68, 166, 181, 0.2); }
+:global([data-theme="dark"]) .menuItem { border-bottom-color: rgba(68, 166, 181, 0.12); }
+:global([data-theme="dark"]) .menuTag {
+  background: rgba(68, 166, 181, 0.15);
+  border-color: rgba(68, 166, 181, 0.3);
+  color: #B2D5E2;
+}
+:global([data-theme="dark"]) .cocktailCard {
+  background: rgba(68, 166, 181, 0.07);
+  border-color: rgba(68, 166, 181, 0.18);
+}
+:global([data-theme="dark"]) .cocktailCard:hover {
+  background: rgba(68, 166, 181, 0.12);
+  border-color: rgba(68, 166, 181, 0.3);
+}
+:global([data-theme="dark"]) .foodBadge { color: #B2D5E2; }
+:global([data-theme="dark"]) .foodFrame,
+:global([data-theme="dark"]) .cocktailFrame {
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.6);
+}
