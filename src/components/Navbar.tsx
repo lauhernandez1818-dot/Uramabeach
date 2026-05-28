@@ -40,25 +40,27 @@ export default function Navbar() {
           />
         </a>
 
-        {/* Desktop Navigation */}
-        <ul className={styles.navLinks}>
-          {NAV_LINKS.map((link) => (
-            <li key={link.href}>
-              <a href={link.href} className={styles.navLink}>
-                {link.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        {/* Desktop Navigation Wrapper */}
+        <div className={styles.navContent}>
+          <ul className={styles.navLinks}>
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a href={link.href} className={styles.navLink}>
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        {/* CTA Button */}
-        <a href="#reservas" className={`btn btn-gold ${styles.ctaBtn}`}>
-          Reservar Ahora
-        </a>
+          {/* CTA Button */}
+          <a href="#reservas" className={`btn btn-gold ${styles.ctaBtn}`}>
+            Reservar Ahora
+          </a>
 
-        {/* Theme Toggle — desktop only, hidden on mobile */}
-        <div className={styles.themeToggleDesktop}>
-          <ThemeToggle />
+          {/* Theme Toggle — desktop only, hidden on mobile */}
+          <div className={styles.themeToggleDesktop}>
+            <ThemeToggle />
+          </div>
         </div>
 
         {/* Mobile Toggle */}

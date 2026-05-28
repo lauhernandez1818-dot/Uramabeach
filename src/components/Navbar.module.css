@@ -19,11 +19,19 @@
 
 .inner {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  gap: 1.25rem;
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 2rem;
+  transition: all var(--transition-base);
+}
+
+.scrolled .inner {
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 0;
 }
 
 .logo {
@@ -34,7 +42,7 @@
 }
 
 .logoImg {
-  height: 140px;
+  height: 95px;
   width: auto;
   flex-shrink: 0;
   filter: invert(1) brightness(2);
@@ -42,12 +50,19 @@
 }
 
 .scrolled .logoImg {
-  height: 90px;
+  height: 55px;
   filter: none;
 }
 
 .logo:hover .logoImg {
-  transform: scale(1.05);
+  transform: scale(1.03);
+}
+
+.navContent {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  transition: all var(--transition-base);
 }
 
 .navLinks {
@@ -195,17 +210,22 @@
 }
 
 @media (max-width: 1024px) {
+  .inner {
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 0 !important;
+  }
+
   .logoImg {
-    height: 90px;
+    height: 70px;
   }
 
   .scrolled .logoImg {
-    height: 64px;
+    height: 48px;
   }
 
-  .navLinks,
-  .ctaBtn,
-  .themeToggleDesktop {
+  .navContent {
     display: none;
   }
 
