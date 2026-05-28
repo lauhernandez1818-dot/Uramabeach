@@ -33,7 +33,7 @@ const SPACES = [
     subtitle: "Vista al Mar",
     description:
       "Toldos elegantes estratégicamente ubicados en primera línea de playa. Equipados con sillas lounger de diseñador, mesa de servicio y acceso directo a nuestro menú digital.",
-    image: "/hero-beach.png",
+    image: "/iniciofondo.webp",
     features: ["Primera Línea", "Menú Digital", "Toallas Premium"],
     price: "Desde $80",
     capacity: "2-4 personas",

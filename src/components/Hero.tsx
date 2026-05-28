@@ -52,7 +52,7 @@ export default function Hero() {
         className={styles.bgWrapper}
       >
         <Image
-          src="/hero-beach.png"
+          src="/iniciofondo.webp"
           alt="UramaBeach aerial view"
           fill
           priority

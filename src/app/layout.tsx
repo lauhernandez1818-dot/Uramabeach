@@ -73,7 +73,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es" suppressHydrationWarning>
+    <html lang="es" className={`${montserrat.variable} ${outfit.variable} ${inter.variable}`} suppressHydrationWarning>
       <head>
         {/* Theme init: runs before paint to avoid flash */}
         <script
@@ -82,7 +82,7 @@ export default function RootLayout({
           }}
         />
       </head>
-      <body className={`${montserrat.variable} ${outfit.variable} ${inter.variable}`}>
+      <body>
         {children}
       </body>
     </html>

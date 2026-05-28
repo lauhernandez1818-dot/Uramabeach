@@ -102,7 +102,7 @@ export default function Experience() {
         <div className={`${styles.showcase} scroll-reveal`}>
           <div className={styles.showcaseFrame}>
             <Image
-              src="/beach-aerial.png"
+              src="/foto1.webp"
               alt="Vista aérea de playa UramaBeach"
               fill
               sizes="(max-width: 768px) 100vw, 1100px"

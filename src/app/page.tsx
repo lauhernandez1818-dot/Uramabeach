@@ -50,7 +50,7 @@ export default function Home() {
       <main>
         <Hero />
         <Experience />
-        <BeachDivider src="/beach-aerial.png" alt="Vista aérea playa UramaBeach" height={260} />
+        <BeachDivider src="/foto1.webp" alt="Vista aérea playa UramaBeach" height={260} />
         <Spaces />
         <BeachDivider src="/beach-waves.png" alt="Olas playa caribeña" height={220} />
         <Gastronomy />
