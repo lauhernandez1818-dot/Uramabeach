@@ -34,7 +34,7 @@
 }
 
 .logoImg {
-  height: 80px;
+  height: 140px;
   width: auto;
   flex-shrink: 0;
   filter: invert(1) brightness(2);
@@ -42,7 +42,7 @@
 }
 
 .scrolled .logoImg {
-  height: 60px;
+  height: 90px;
   filter: none;
 }
 
@@ -196,11 +196,11 @@
 
 @media (max-width: 1024px) {
   .logoImg {
-    height: 64px;
+    height: 90px;
   }
 
   .scrolled .logoImg {
-    height: 50px;
+    height: 64px;
   }
 
   .navLinks,
